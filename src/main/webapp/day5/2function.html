@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function 연습</title>
+<script>
+	console.log("1.js");
+	window.onload = f1;  //f1함수이름을 로드 후에 수행
+	
+	function call(ff){
+		//행위는 정해졌는 언제 호출할지 정해지지 않았을 경우 callback함수 사용
+		ff();
+		ff();
+	}
+	
+	function f1(){
+		here.innerHTML = 'JS에서 접근';
+		
+		btn7.onclick = function(){
+			clearInterval(timer);
+		};
+		
+		btn6.onclick = function(){
+			timer = setInterval(function(){
+				here.innerHTML += new Date();
+			}, 1000);
+		};
+		
+		btn5.onclick = function(){
+			var myFunction = function(){
+				here.innerHTML += "<p>JS배우기</p>";
+			};
+			call(myFunction);
+		};
+		
+		btn4.onclick = function(){
+			var alert = 100;
+			//alert("massage띄우기");
+			alert(alert);  //alert is not a function - 예약어는 변수로 사용하지 않음
+			
+		};
+		
+		
+		btn3.onclick = function(){
+			here.innerHTML = sumAll(1,2,3,4,5,6,7,8,9,10);
+			
+			function sumAll(){  //내부함수 - 함수이름이 충돌되면 내부함수가 실행..!
+				//반드시 수행되어야하는 함수는 내부함수로!
+				//내장변수arguments
+				var total = 0;
+				for(let i=0; i<arguments.length; i++){
+					total += arguments[i];
+				}
+				return total;
+			}
+		};
+		
+		btn2.onclick = function(){
+			var a = Array();
+			var b = Array(5);
+			var c = Array(100,200,300);
+			here.innerHTML = a.length;
+			here.innerHTML += "<br>"+b.length;
+			here.innerHTML += "<br>"+c;
+		};
+		
+		btn1.onclick = function(){
+			here.innerHTML = sum(10,20,30);  //남는 경우
+			here.innerHTML += "<br>"+sum(10);  //모자란 경우
+			here.innerHTML += "<br>"+sum(10,20);
+		};
+	}
+	function sumAll(){   ///같은 이름의 함수는 뒤에것이 실행됨.
+		return 999;
+	}
+	
+	
+	function sum(a,b){
+		return a+b;
+	}
+</script>
+</head>
+<body> <!-- onload = "here.innerHTML = 'JS에서 접근';" -->
+<script>
+	console.log("2.js");	
+</script>
+<h1>JS function</h1>
+<hr>
+<button id="btn1">함수의 매개변수</button>
+<button id="btn2">Array</button>
+<button id="btn3">arguments..내부함수연습</button>
+<button id="btn4">이름충돌</button>
+<button id="btn5">callback함수</button>
+<button id="btn6">callback함수..타이머 시작</button>
+<button id="btn7">타이머 중지</button>
+<hr>
+<div id="here">여기</div>
+<script>
+	console.log("3.js");
+	//here.innerHTML = "JS에서 접근";
+</script>
+</body>
+</html>

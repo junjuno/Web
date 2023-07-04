@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+<style>
+	ul{
+		list-style:none;
+	}
+	li{
+		margin: 10px;
+	}
+	span{
+		font-weight: bold;
+		width: 150px;
+		display: inline-block;
+	}
+	
+	input[type="submit"]{
+		border: 0;
+		width: 100px;
+		height: 20px;
+	}
+	.all{
+		margin-left : auto;
+		margin-right: auto;
+	}
+	.line {
+		width : 400px;
+	}
+	input{
+		align-items: center;
+	}
+	
+</style>
+</head>
+<body>
+	<h1>직원 등록 폼</h1>
+	<form class="all" action = "empInsert.jsp">
+		<fieldset class="line">
+			<legend><h3>employ form</h3></legend>
+			<ul>
+				<li>
+					<label for="employee_id"><span>employee_id</span>
+					<input type="number" required id="employee_id" name="employee_id" placeholder="직원번호는 sequence처리함" value="999">
+					</label>
+				</li>
+				<li>
+					<label for="first_name"><span>first_name</span>
+					<input type="text" id="first_name" name="first_name" maxlength="20">
+					</label>
+				</li>
+				<li>
+					<label for="last_name"><span>last_name</span>
+					<input type="text" required id="last_name" name="last_name" required>
+					</label>
+				</li>
+				<li>
+					<label for="email"><span>email</span>
+					<input type="email" required id="email" name="email" required>
+					</label>
+				</li>
+				<li>
+					<label for="phone_number"><span>phone_number</span>
+					<input type="tel" pattern="010-[0-9]{4}-[0-9]{4}" name="phone_number">
+					</label>
+				</li>
+				<li>
+					<label for="hire_date"><span>hire_date</span>
+					<input type="date" required id="hire_date" name="hire_date" required/>
+					</label>
+				</li>
+				<li>
+					<label for="job_id"><span>job_id</span>
+					<input type="text" required id="job_id" name="job_id" value="IT_PROG" required>
+					</label>
+				</li>
+				<li>
+					<label for="salary"><span>salary</span>
+					<input type="number" id="salary" name="salary">
+					</label>
+				</li>
+				<li>
+					<label for="commission_pct"><span>commission_pct</span>
+					<input type="number" id="commission_pct" name="commission_pct">
+					</label>
+				</li>
+				<li>
+					<label for="manager_id"><span>manager_id</span>
+					<input type="number" id="manager_id" name="manager_id" value="100">
+					</label>
+				</li>
+				<li>
+					<label for="department_id"><span>department_id</span>
+					<input type="number" id="department_id" name="department_id" value="60">
+					</label>
+				</li>
+			</ul>
+			
+			<input type="submit" value="등록하기"/> 
+		</fieldset>
+	</form>
+​
+</body>
+</html>
